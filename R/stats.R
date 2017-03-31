@@ -14,11 +14,11 @@ library(Biostrings)
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-stats_genomeDNA <- function(dna) {
+stats_geneDNA <- function(dna) {
   # Calculate a statistics of sequence.
   #
   # Args:
-  #   dna: Nucleic sequence
+  #   dna: Nucleic sequence.
   #
   # Returns:
   #   Dataframe of stats
@@ -32,18 +32,18 @@ stats_genomeDNA <- function(dna) {
   # Calculate codon usage
   codon <- trinucleotideFrequency(dnaString)
   normalizedCodon <- codon  # TODO
-  # Init an empty named vector
-  aaName <- unique(GENETIC_CODE)
-  aa <- rep(0, length(aaName))
-  names(aa) <- aaName
-  # Populize vector
+  # Convert to AA usage
+  aaUsage <- rep(codon)
+  names(aaUsage) <- GENETIC_CODE[names(codon)]
+  aaUsage <- sapply(split(aaUsage, names(aaUsage)), sum)
 
 
   # normalizeCodon <- codon
   #
   ret <- list(length=length(dnaString),
               gcContent=gcCount/allCount,
-              codonUsage=normalizedCodon)
+              codonUsage=normalizedCodon,
+              aaUsage=aaUsage)
   return(ret)
 }
 
