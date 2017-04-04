@@ -15,7 +15,8 @@ Imports:
     Rcpp (>= 0.12.9),
     genbankr,
     rentrez,
-    Biostrings
+    Biostrings,
+    fmsb
 LinkingTo: Rcpp
 Suggests: testthat,
     knitr,
