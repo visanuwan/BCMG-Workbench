@@ -1,20 +1,23 @@
 Package: BCMGWorkbench
 Type: Package
-Title: Comparative genomic tool kit.
+Title: Comparative genomic workbench.
 Version: 0.1.0
 Authors@R: c(
     person("Preecha", "Patumcharoenpol", email = "PPatumcharoenpol@uams.edu", role = c("cre", "aut")),
-    person("Visanu", "Wanchai", email = "VWanchai@uams.edu", role = "aut"))
-Maintainer: The package maintainer <yourself@somewhere.net>
+    person("Visanu", "Wanchai", email = "VWanchai@uams.edu", role = "aut"),
+    person("Michael", "Leuze", email = "leuzemr@ornl.gov", role = "ctb"))
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Imports:
     Rcpp (>= 0.12.9),
     genbankr,
     rentrez,
     Biostrings
 LinkingTo: Rcpp
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

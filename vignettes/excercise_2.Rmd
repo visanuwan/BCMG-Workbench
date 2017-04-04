@@ -1,0 +1,13 @@
+---
+title: "Excercise day 2"
+author: "Preecha Patumcharoenpol"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Excercise day 2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Computer exercise: day 2
+_TODO_

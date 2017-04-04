@@ -1,0 +1,35 @@
+---
+title: "Excercise day 1"
+author: "Preecha Patumcharoenpol"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Excercise day 1}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Computer exercise: day 1
+
+- Download genomes from GenBank and extract DNA
+- Extract genes and proteins
+- Calculate basic statistics
+- Amino acid and codon usage
+
+### Download genomes from Genbank and extract DNA
+```{r, echo = FALSE}
+library(genbankr)
+gbk_file <- readGenBank(GBAccession("AE000511"))
+cdsList <-  cds(gbk_file)  # GenemicRange's object
+
+# Extract sequence from ranges and calculate a statistics
+seqs <- extractAt(gbk_file@sequence[[1]], cdsList@ranges)
+```
+
+
+
+### Or run prodigal (gene prediction program) on a download sequences
+```r
+library(Prodigal)
+predicted <- prodigal(gbk_file@sequence[[1]])
+```
